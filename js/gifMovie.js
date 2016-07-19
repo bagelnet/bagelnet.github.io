@@ -6,4 +6,4 @@ encoder.addFrame(ctx); // ctx defined on camera.js
 encoder.finish();
 var binary_gif = encoder.stream().getData() //notice this is different from the as3gif package!
 var data_url = 'data:image/gif;base64,'+encode64(binary_gif);
-document.getElementById('gifmovie').setAttribute('src', dataURL);
+document.getElementById('gifmovie').setAttribute('src', data_url);
