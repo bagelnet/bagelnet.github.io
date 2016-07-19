@@ -1,6 +1,6 @@
 (function() {
   var canvas = document.getElementById('camera');
-  var ctx = canvas.getContext('2d');
+  ctx = canvas.getContext('2d');
   window.onload = function(){
     if ( checkFileApi() && checkCanvas(canvas) ){
       //ファイル選択
