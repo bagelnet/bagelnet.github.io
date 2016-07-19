@@ -7,20 +7,18 @@
     <script type="text/javascript" src="js/NeuQuant.js"></script>
     <script type="text/javascript" src="js/GIFEncoder.js"></script>
     <script type="text/javascript" src="js/b64.js"></script>
-    <title>ファイル選択（カメラ起動）テスト</title>
+    <title>TSUMIKI〜ボクの自由研究〜</title>
   </head>
   <body>
     <header>
-      <h1>ファイル選択（カメラ起動）テスト</h1>
+      <h1>毎日、変化の様子を写真に収めよう！</h1>
     </header>
     <main>
-      <p>元画像 <span id="src-width-height">width: height: </span></p>
-      <p>リサイズ <span id="dst-width-height">width: height: </span></p>
       <p><input type="file" accept="image/*" capture="camera" id="file-image"></p>
       <p><input type="button" value="ムービーを生成" onclick="exportGifMovie();"></p>
+      <image id="gifmovie" name="movie.gif" />
       <canvas id="camera">Canvasに対応しているブラウザを使用して下さい。</canvas>
       <input type="hidden" id="loading" onchange="addPicture(ctx);">
-      <image id="gifmovie" name="movie.gif" />
     </main>
     <script type="text/javascript" src="js/camera.js"></script>
     <script type="text/javascript" src="js/gifMovie.js"></script>

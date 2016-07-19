@@ -69,14 +69,14 @@
 
   function readDrawImg(reader, canvas, x, y){
     var img = readImg(reader);
-    ctx = null;
     img.onload = function(){
       var w = img.width;
       var h = img.height;
-      printWidthHeight( 'src-width-height', true, w, h);
+      // printWidthHeight( 'src-width-height', true, w, h);
       var resize = resizeWidthHeight(512, w, h);
-      printWidthHeight( 'dst-width-height', resize.flag, resize.w, resize.h);
+      // printWidthHeight( 'dst-width-height', resize.flag, resize.w, resize.h);
       ctx = drawImgOnCav(canvas, img, x, y, resize.w, resize.h);
+      drawDate(x, y, resize.w);
       document.getElementById('loading').onchange();
       // // モバイルであればリサイズ
       // if(_ua.Mobile[0]){
@@ -107,6 +107,21 @@
     canvas.height = h;
     ctx.drawImage(img, x, y, w, h);
     return ctx;
+  }
+
+  function drawDate(x, y, width) {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillRect(x, y, width, 20);
+
+    var dt = new Date();
+    var year = dt.getFullYear();
+    var month = dt.getMonth()+1;
+    var date = dt.getDate();
+    dateT = ["日","月","火","水","木","金","土"];
+    var day = dateT[dt.getDay()];
+    var date_str = year + '/' + month + '/' + date + ' (' + day + ')';
+    ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+    ctx.fillText(date_str , x+10, y+14)
   }
 
   // リサイズ後のwidth, heightを求める
