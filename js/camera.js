@@ -69,7 +69,7 @@
 
   function readDrawImg(reader, canvas, x, y){
     var img = readImg(reader);
-    var ctx;
+    ctx = null;
     img.onload = function(){
       var w = img.width;
       var h = img.height;
