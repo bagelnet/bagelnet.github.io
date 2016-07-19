@@ -7,13 +7,21 @@
     <script type="text/javascript" src="js/NeuQuant.js"></script>
     <script type="text/javascript" src="js/GIFEncoder.js"></script>
     <script type="text/javascript" src="js/b64.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/system.css">
     <title>TSUMIKI〜ボクの自由研究〜</title>
   </head>
   <body>
     <header>
-      <h1>毎日、変化の様子を写真に収めよう！</h1>
+      <h1>毎日の変化の様子を写真に収めよう！</h1>
     </header>
     <main>
+      <p>朝顔の成長や、メダカの変化を毎日写真に撮っておけば、キミだけの自由研究の完成だ</p>
+      <ul>
+        <li>「ファイルを選択」ボタンを押して写真を撮ろう (写真の画像を選択しよう)</li>
+        <li>「ムービーを生成」ボタンを押して動画にしよう </li>
+        <li>生成された動画を保存しよう</li>
+      </ul>
       <p><input type="file" accept="image/*" capture="camera" id="file-image"></p>
       <p><input type="button" value="ムービーを生成" onclick="exportGifMovie();"></p>
       <image id="gifmovie" name="movie.gif" />
