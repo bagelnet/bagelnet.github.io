@@ -1,6 +1,5 @@
 (function() {
   var canvas = document.getElementById('camera');
-  ctx = canvas.getContext('2d');
   window.onload = function(){
     if ( checkFileApi() && checkCanvas(canvas) ){
       //ファイル選択
@@ -74,16 +73,18 @@
       var w = img.width;
       var h = img.height;
       printWidthHeight( 'src-width-height', true, w, h);
+      var ctx;
       // モバイルであればリサイズ
       if(_ua.Mobile[0]){
         var resize = resizeWidthHeight(1024, w, h);
         printWidthHeight( 'dst-width-height', resize.flag, resize.w, resize.h);
-        drawImgOnCav(canvas, img, x, y, resize.w, resize.h);
+        ctx = drawImgOnCav(canvas, img, x, y, resize.w, resize.h);
       }else{
         // モバイル以外では元サイズ
         printWidthHeight( 'dst-width-height', false, 0, 0);
-        drawImgOnCav(canvas, img, x, y, w, h);
+        ctx = drawImgOnCav(canvas, img, x, y, w, h);
       }
+      exportGifMovie(ctx)
     }
   }
 
@@ -98,9 +99,11 @@
 
   //キャンバスにImageを表示
   function drawImgOnCav(canvas, img, x, y, w, h) {
+    var ctx = canvas.getContext('2d');
     canvas.width = w;
     canvas.height = h;
     ctx.drawImage(img, x, y, w, h);
+    return ctx;
   }
 
   // リサイズ後のwidth, heightを求める
