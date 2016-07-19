@@ -10,5 +10,8 @@ function exportGifMovie() {
     encoder.finish();
     var binary_gif = encoder.stream().getData() //notice this is different from the as3gif package!
     var data_url = 'data:image/gif;base64,'+encode64(binary_gif);
-    document.getElementById('gifmovie').setAttribute('src', data_url);
+    var image = document.getElementById('gifmovie')
+    image.setAttribute('src', data_url);
+    image.style.display = "block";
+    document.getElementById('camera').style.display = "none";
 }

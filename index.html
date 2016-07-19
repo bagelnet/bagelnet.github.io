@@ -24,8 +24,8 @@
       </ul>
       <p><input type="file" accept="image/*" capture="camera" id="file-image"></p>
       <p><input type="button" value="ムービーを生成" onclick="exportGifMovie();"></p>
-      <image id="gifmovie" name="movie.gif" />
-      <canvas id="camera">Canvasに対応しているブラウザを使用して下さい。</canvas>
+      <p><image id="gifmovie" name="movie.gif" style="display:none;"/></p>
+      <p><canvas id="camera">Canvasに対応しているブラウザを使用して下さい。</canvas></p>
       <input type="hidden" id="loading" onchange="addPicture(ctx);">
     </main>
     <script type="text/javascript" src="js/camera.js"></script>
