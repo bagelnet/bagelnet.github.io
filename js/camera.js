@@ -1,5 +1,6 @@
 (function() {
   var canvas = document.getElementById('camera');
+  var ctx = canvas.getContext('2d');
   window.onload = function(){
     if ( checkFileApi() && checkCanvas(canvas) ){
       //ファイル選択
@@ -97,7 +98,6 @@
 
   //キャンバスにImageを表示
   function drawImgOnCav(canvas, img, x, y, w, h) {
-    var ctx = canvas.getContext('2d');
     canvas.width = w;
     canvas.height = h;
     ctx.drawImage(img, x, y, w, h);

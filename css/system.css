@@ -4,7 +4,7 @@ html, body {
     font-family: 'Noto Sans Japanese', sans-serif;
     text-align: center;
 }
-canvas.camera {
+canvas {
   border: 1px #333 solid;
   max-width: 100%;
   height: auto;
