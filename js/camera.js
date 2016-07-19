@@ -1,5 +1,6 @@
 (function() {
   var canvas = document.getElementById('camera');
+  index = 0;
   ctx = canvas.getContext('2d');
   window.onload = function(){
     if ( checkFileApi() && checkCanvas(canvas) ){
@@ -113,6 +114,8 @@
     ctx.fillRect(x, y, width, 20);
 
     var dt = new Date();
+    dt.setDate(dt.getDate()+index);
+    index++;
     var year = dt.getFullYear();
     var month = dt.getMonth()+1;
     var date = dt.getDate();
