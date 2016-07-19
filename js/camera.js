@@ -77,6 +77,7 @@
       var resize = resizeWidthHeight(512, w, h);
       printWidthHeight( 'dst-width-height', resize.flag, resize.w, resize.h);
       ctx = drawImgOnCav(canvas, img, x, y, resize.w, resize.h);
+      document.getElementById('loading').onchange();
       // // モバイルであればリサイズ
       // if(_ua.Mobile[0]){
       //   var resize = resizeWidthHeight(1024, w, h);
@@ -88,7 +89,6 @@
       //   ctx = drawImgOnCav(canvas, img, x, y, w, h);
       // }
     }
-    exportGifMovie(ctx);
   }
 
   //ファイルの読込が終了した時の処理
