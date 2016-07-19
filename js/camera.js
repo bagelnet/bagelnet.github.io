@@ -1,5 +1,5 @@
 (function() {
-  var canvas = document.getElementById('mycanvas');
+  var canvas = document.getElementById('camera');
   window.onload = function(){
     if ( checkFileApi() && checkCanvas(canvas) ){
       //ファイル選択
